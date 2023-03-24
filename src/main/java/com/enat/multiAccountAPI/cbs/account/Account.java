@@ -17,4 +17,6 @@ public class Account {
     private String accountNo;
     @NotNull
     private String branch;
+    @NotNull
+    private String creditFlag;
 }

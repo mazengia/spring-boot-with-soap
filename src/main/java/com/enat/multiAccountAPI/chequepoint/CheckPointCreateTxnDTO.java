@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.chequepoint;
+package com.enat.multiAccountAPI.chequepoint;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

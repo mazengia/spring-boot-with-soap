@@ -1,5 +1,6 @@
-package com.enatbanksc.payment.exceptions;
+package com.enat.multiAccountAPI.local.config;
 
+import com.enat.multiAccountAPI.local.config.exception.BadRequestException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Response;
 import feign.codec.ErrorDecoder;
@@ -7,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 @Log4j2
 public class DerashErrorDecoder implements ErrorDecoder {
 
@@ -23,9 +25,9 @@ public class DerashErrorDecoder implements ErrorDecoder {
         }
         return switch (response.status()) {
             case 400 -> new BadRequestException();
-            case 402 -> new BillAlreadyPaidException(derashError);
-            case 404 -> new BillNotFoundException(derashError);
-            case 403 -> new BillExpiredException(derashError);
+//            case 402 -> new BillAlreadyPaidException(derashError);
+//            case 404 -> new BillNotFoundException(derashError);
+//            case 403 -> new BillExpiredException(derashError);
             default -> new Exception("Exception while talking to derash");
         };
     }

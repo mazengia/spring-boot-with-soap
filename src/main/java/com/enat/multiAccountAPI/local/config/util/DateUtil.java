@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.util;
+package com.enat.multiAccountAPI.local.config.util;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

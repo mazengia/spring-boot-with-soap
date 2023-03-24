@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.exceptions;
+package com.enat.multiAccountAPI.local.config;
 
 public class DerashError {
     public int statusCode;

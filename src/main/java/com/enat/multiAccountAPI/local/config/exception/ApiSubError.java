@@ -6,7 +6,7 @@
 package com.enat.multiAccountAPI.local.config.exception;
 
 
-abstract class ApiSubError {
+public abstract class ApiSubError {
 
 }
 

@@ -1,6 +1,6 @@
 package com.enat.multiAccountAPI.flex.accountHolder;
 
- import com.enat.multiAccountAPI.local.newAccounts.NewAccountsDto;
+ import com.enat.multiAccountAPI.local.creditAccounts.CreditsDto;
  import com.enat.multiAccountAPI.local.config.util.PaginatedResultsRetrievedEvent;
  import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
@@ -25,7 +25,7 @@ public class AccountHolderController implements AccountHolderApi {
     @Override
     public ResponseEntity<PagedModel<AccountHolderDto>> getComments(Pageable pageable, PagedResourcesAssembler assembler, String accountNumber, UriComponentsBuilder uriBuilder, HttpServletResponse response) throws IllegalAccessException {
         eventPublisher.publishEvent(new PaginatedResultsRetrievedEvent<>(
-                NewAccountsDto.class, uriBuilder, response, pageable.getPageNumber(), accountHolderService.getAccountHolder(accountNumber, pageable).getTotalPages(), pageable.getPageSize()));
+                CreditsDto.class, uriBuilder, response, pageable.getPageNumber(), accountHolderService.getAccountHolder(accountNumber, pageable).getTotalPages(), pageable.getPageSize()));
         return new ResponseEntity<PagedModel<AccountHolderDto>>(assembler.toModel(accountHolderService.getAccountHolder(accountNumber, pageable).map(accountHolderMapper::toAccountHolderDto)), HttpStatus.OK);
     }
 

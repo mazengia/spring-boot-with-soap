@@ -8,5 +8,5 @@ import java.math.BigDecimal;
 
 public interface AccountApi {
     @GetMapping("/{accountNo}")
-    Account getAccountDetail(@PathVariable("accountNo") String accountNo, @RequestParam("paymentAmount")BigDecimal payment);
+    Account getAccountDetail(@PathVariable("accountNo") String accountNo );
 }

@@ -48,24 +48,23 @@ public class AccountConfig {
         WebServiceTemplate webServiceTemplate = new WebServiceTemplate();
         webServiceTemplate.setMarshaller(marshaller);
         webServiceTemplate.setUnmarshaller(marshaller);
-        webServiceTemplate.setDefaultUri("http://10.1.22.100:7003/FCUBSAccService/FCUBSAccService");
+        webServiceTemplate.setDefaultUri(host);
         // set a HttpComponentsMessageSender which provides support for basic authentication
         webServiceTemplate.setMessageSender(httpComponentsMessageSender());
-
         return webServiceTemplate;
+
     }
+
     @Bean
     public HttpComponentsMessageSender httpComponentsMessageSender() {
         HttpComponentsMessageSender httpComponentsMessageSender = new HttpComponentsMessageSender();
         // set the basic authorization credentials
         httpComponentsMessageSender.setCredentials(usernamePasswordCredentials());
-
         return httpComponentsMessageSender;
     }
 
     @Bean
     public UsernamePasswordCredentials usernamePasswordCredentials() {
-        // pass the user name and password to be used
         return new UsernamePasswordCredentials(username, password);
     }
 

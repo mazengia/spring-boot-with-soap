@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.cbs.batch;
+package com.enat.multiAccountAPI.cbs.batch;
 
 import lombok.Builder;
 import lombok.Data;
@@ -17,4 +17,5 @@ public class CreateBatchDto {
     @Size(min = 3, max = 3,message = "Account branch code should be exactly 3 digits")
     private String creditAccountBranch;
     private String makerBranch;
+    private BatchTransaction  batchTransaction;
 }

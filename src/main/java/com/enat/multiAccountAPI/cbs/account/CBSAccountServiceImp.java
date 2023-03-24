@@ -6,6 +6,8 @@ import com.enat.multiAccountAPI.local.config.exception.InsufficientBalanceExcept
 import com.enat.multiAccountAPI.wsdl.account.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -16,17 +18,11 @@ import java.util.List;
 @RequiredArgsConstructor
 @Log4j2
 public class CBSAccountServiceImp implements CBSAccountService {
-
     private final AccountClient accountClient;
-//    private final CommissionRateService commissionRateService;
 
     @Override
-    public Account getAccountDetail(String accountNo, BigDecimal paymentAmount) {
-        System.out.println("accountNo=" + accountNo + " " + "paymentAmount=" + paymentAmount);
-        var branchCode = getBranchCode(accountNo);
-        System.out.println("branchCode=" + branchCode);
-        var clientAccountDetail = accountClient.getAccountDetail(accountNo, branchCode);
-        System.out.println("clientAccountDetail=" + clientAccountDetail);
+    public Account getAccountDetail(String accountNo) {
+        var clientAccountDetail = accountClient.getAccountDetail(accountNo);
         checkCBSError(clientAccountDetail);
         var accountDetail = clientAccountDetail.getFCUBSBODY().getCustAccountFull();
         return Account.builder()
@@ -37,9 +33,6 @@ public class CBSAccountServiceImp implements CBSAccountService {
                 .build();
     }
 
-    private String getBranchCode(String accountNo) {
-        return accountNo.substring(0, 3);
-    }
 
     private void checkCBSError(QUERYCUSTACCIOFSRES rep) {
         if (!rep.getFCUBSBODY().getFCUBSERRORRESP().isEmpty()) {

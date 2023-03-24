@@ -13,7 +13,7 @@ public class AccountController implements AccountApi {
     private final CBSAccountService accountService;
 
     @Override
-    public Account getAccountDetail(String accountNo, BigDecimal paymentAmount) {
-        return accountService.getAccountDetail(accountNo,paymentAmount);
+    public Account getAccountDetail(String accountNo ) {
+        return accountService.getAccountDetail(accountNo );
     }
 }

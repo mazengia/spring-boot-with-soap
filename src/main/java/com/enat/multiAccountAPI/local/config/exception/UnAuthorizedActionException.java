@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.exceptions;
+package com.enat.multiAccountAPI.local.config.exception;
 
 import lombok.Getter;
 

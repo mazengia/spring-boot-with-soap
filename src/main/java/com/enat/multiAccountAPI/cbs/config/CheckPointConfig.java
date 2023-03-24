@@ -1,11 +1,10 @@
-package com.enatbanksc.payment.config;
+package com.enat.multiAccountAPI.cbs.config;
 
-import com.enatbanksc.payment.chequepoint.CheckPointClient;
+import com.enat.multiAccountAPI.chequepoint.CheckPointClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.transport.http.HttpComponentsMessageSender;
 
 @Configuration
@@ -19,7 +18,7 @@ public class CheckPointConfig {
         var marshaller = new Jaxb2Marshaller();
         // this package must match the package in the <generatePackage> specified in
         // pom.xml
-        marshaller.setContextPath("com.enatbanksc.chequepoint.wsdl");
+        marshaller.setContextPath("com.enat.multiAccountAPI.wsdl.chequepoint");
         return marshaller;
     }
 
@@ -33,15 +32,4 @@ public class CheckPointConfig {
         return client;
     }
 
-//    @Bean
-//    public WebServiceTemplate webServiceTemplate(Jaxb2Marshaller marshaller) {
-//        WebServiceTemplate webServiceTemplate = new WebServiceTemplate();
-//        webServiceTemplate.setMarshaller(marshaller);
-//        webServiceTemplate.setUnmarshaller(marshaller);
-//        webServiceTemplate.setDefaultUri("http://10.1.22.155/FinInterface/FinInterface.asmx");
-//        // set a HttpComponentsMessageSender which provides support for basic authentication
-//        webServiceTemplate.setMessageSender(httpComponentsMessageSender);
-//
-//        return webServiceTemplate;
-//    }
 }

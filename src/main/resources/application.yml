@@ -1,11 +1,11 @@
-client:
-  account-uri: ENC(9jm6QhmP5N1qIFjGPAVC4JDxSa+eITt8dWKZdNkMu3e8+TxcEhdZX0wxUyveL5SgbwI4av1nHq0amGMne+1aAGC0Qlro1vi+Zw4TuPhr/DmHV9qCFapCO6VQsShMmufr)
-  batch-uri: ENC(iYEHMpxbfvZEnLu0gjVkHwz+Yj3haowsBMk17jmN++tle+4/PW+3CrWkdGM+4m3+sUbDN1drEyO7H9eBASh8/Hqq+Tm1JfhaMTl/GC1AmtWQHA+Jh2ehaKuA70RFLzIL)
-  maker-user: ENC(dYAgRW340dYheD5ZAmwT3zfgh7Yein01uWWi5O3+hO8TcZoygmaf9UDauByLsPu8)
-  authorizer-user: ENC(GGpShf5jjKUvVZk82lCTSFidrZk9JekQ1nrr0Wd5Ur33iXlpWWSFlcNr8dhzcHWA)
-  user:
-    name: ENC(/eZnt0AkGoU7KkzYx5zYXP/jll8P96o1fR3+wRrMWD6HyS1vRX/xeIGPzDbOnsmy)
-    password: ENC(Nmw+5R2uZPnHX6rLgS+ZI+7/kkVBSyXQcAnXYLAo85Zk5cR5eKOS4loEljYbOKrl)
+#client:
+#  account-uri: ENC(9jm6QhmP5N1qIFjGPAVC4JDxSa+eITt8dWKZdNkMu3e8+TxcEhdZX0wxUyveL5SgbwI4av1nHq0amGMne+1aAGC0Qlro1vi+Zw4TuPhr/DmHV9qCFapCO6VQsShMmufr)
+#  batch-uri: ENC(iYEHMpxbfvZEnLu0gjVkHwz+Yj3haowsBMk17jmN++tle+4/PW+3CrWkdGM+4m3+sUbDN1drEyO7H9eBASh8/Hqq+Tm1JfhaMTl/GC1AmtWQHA+Jh2ehaKuA70RFLzIL)
+#  maker-user: ENC(dYAgRW340dYheD5ZAmwT3zfgh7Yein01uWWi5O3+hO8TcZoygmaf9UDauByLsPu8)
+#  authorizer-user: ENC(GGpShf5jjKUvVZk82lCTSFidrZk9JekQ1nrr0Wd5Ur33iXlpWWSFlcNr8dhzcHWA)
+#  user:
+#    name: ENC(/eZnt0AkGoU7KkzYx5zYXP/jll8P96o1fR3+wRrMWD6HyS1vRX/xeIGPzDbOnsmy)
+#    password: ENC(Nmw+5R2uZPnHX6rLgS+ZI+7/kkVBSyXQcAnXYLAo85Zk5cR5eKOS4loEljYbOKrl)
 #jasypt:
 #  encryptor:
 #    algorithm: PBEWithMD5AndDES

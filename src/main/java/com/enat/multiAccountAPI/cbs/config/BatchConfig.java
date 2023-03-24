@@ -1,6 +1,6 @@
-package com.enatbanksc.payment.config;
+package com.enat.multiAccountAPI.cbs.config;
 
-import com.enatbanksc.payment.cbs.batch.BatchClient;
+import com.enat.multiAccountAPI.cbs.batch.BatchClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +29,7 @@ public class BatchConfig {
         var marshaller = new Jaxb2Marshaller();
         // this package must match the package in the <generatePackage> specified in
         // pom.xml
-        marshaller.setContextPath("com.enatbanksc.batch.wsdl");
+        marshaller.setContextPath("com.enat.multiAccountAPI.wsdl.batch");
         return marshaller;
     }
 

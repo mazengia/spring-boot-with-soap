@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.cbs.batch;
+package com.enat.multiAccountAPI.cbs.batch;
 
 import lombok.Builder;
 import lombok.Data;

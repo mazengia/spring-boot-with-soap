@@ -7,7 +7,6 @@ import lombok.Getter;
 public enum DrCr {
     DEBIT("D"), CREDIT("C");
     private final String type;
-
     @Override
     public String toString() {
         return type;

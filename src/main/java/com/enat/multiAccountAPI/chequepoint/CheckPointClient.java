@@ -1,13 +1,12 @@
-package com.enatbanksc.payment.chequepoint;
+package com.enat.multiAccountAPI.chequepoint;
 
-import com.enatbanksc.chequepoint.wsdl.SubmitTxn;
-import com.enatbanksc.chequepoint.wsdl.SubmitTxnResponse;
-import com.enatbanksc.chequepoint.wsdl.UtilAPISubmitTxnRequest;
+import com.enat.multiAccountAPI.wsdl.chequepoint.SubmitTxn;
+import com.enat.multiAccountAPI.wsdl.chequepoint.SubmitTxnResponse;
+import com.enat.multiAccountAPI.wsdl.chequepoint.UtilAPISubmitTxnRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.SoapMessage;
-import org.springframework.ws.soap.server.endpoint.annotation.SoapAction;
 
 @Log4j2
 @RequiredArgsConstructor

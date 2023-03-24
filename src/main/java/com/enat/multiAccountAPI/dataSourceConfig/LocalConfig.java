@@ -23,10 +23,8 @@ import javax.sql.DataSource;
         entityManagerFactoryRef = "mainEntityManagerFactory",
         transactionManagerRef = "mainTransactionManager",
         basePackages = {
-                "com.enat.multiAccountAPI.local.accountType",
-                "com.enat.multiAccountAPI.local.newAccounts"
-//                ,"com.enat.multiAccountAPI.cbs.account",
-//                "com.enat.multiAccountAPI.local.cbs.batch"
+                "com.enat.multiAccountAPI.local.creditAccounts",
+                "com.enat.multiAccountAPI.cbs.batch"
         }
 )
 public class LocalConfig {
@@ -47,10 +45,8 @@ public class LocalConfig {
         return builder
                 .dataSource(customerDataSource)
                 .packages(
-                        "com.enat.multiAccountAPI.local.accountType",
-                        "com.enat.multiAccountAPI.local.newAccounts"
-//                        ,"com.enat.multiAccountAPI.local.cbs.account",
-//                        "com.enat.multiAccountAPI.local.cbs.batch"
+                        "com.enat.multiAccountAPI.local.creditAccounts",
+                        "com.enat.multiAccountAPI.cbs.batch"
                 )
                 .build();
     }

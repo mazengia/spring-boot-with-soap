@@ -1,4 +1,4 @@
-package com.enatbanksc.payment.util;
+package com.enat.multiAccountAPI.local.config.util;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,6 +1,6 @@
-package com.enatbanksc.payment.cbs.batch;
+package com.enat.multiAccountAPI.cbs.batch;
 
-import com.enatbanksc.payment.cbs.DrCr;
+import com.enat.multiAccountAPI.cbs.DrCr;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,15 +1,14 @@
-package com.enatbanksc.payment.cbs.batch;
+package com.enat.multiAccountAPI.cbs.batch;
 
-import com.enatbanksc.batch.wsdl.AUTHORIZEDEBATCHBROWSERFSFSRES;
-import com.enatbanksc.batch.wsdl.CREATEMJRNLBOOKFSFSRES;
-import com.enatbanksc.batch.wsdl.DELETEDEBATCHBROWSERFSFSRES;
+
+import com.enat.multiAccountAPI.wsdl.batch.AUTHORIZEDEBATCHBROWSERFSFSRES;
+import com.enat.multiAccountAPI.wsdl.batch.CREATEMJRNLBOOKFSFSRES;
+import com.enat.multiAccountAPI.wsdl.batch.DELETEDEBATCHBROWSERFSFSRES;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 
 public interface BatchService {
-//    CREATEMJRNLBOOKFSFSRES createBatch(CreateBatchDto createBatchDto);
-
-    CREATEMJRNLBOOKFSFSRES createBatch(BatchCreate batchCreate);
+    CREATEMJRNLBOOKFSFSRES createBatch(BatchCreate batchCreate,JwtAuthenticationToken token);
 
     AUTHORIZEDEBATCHBROWSERFSFSRES authorizeBatch(AuthorizeBatchDto authorizeBatchDto);
-
     DELETEDEBATCHBROWSERFSFSRES deleteBatch(DeleteBatchDto deleteBatchDto);
 }
