@@ -2,15 +2,13 @@ package com.enat.multiAccountAPI.cbs.account;
 
 import com.enat.multiAccountAPI.local.config.exception.CBSError;
 import com.enat.multiAccountAPI.local.config.exception.CBSException;
-import com.enat.multiAccountAPI.local.config.exception.InsufficientBalanceException;
-import com.enat.multiAccountAPI.wsdl.account.*;
+import com.enat.multiAccountAPI.wsdl.account.ERRORDETAILSType;
+import com.enat.multiAccountAPI.wsdl.account.ERRORType;
+import com.enat.multiAccountAPI.wsdl.account.QUERYCUSTACCIOFSRES;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 

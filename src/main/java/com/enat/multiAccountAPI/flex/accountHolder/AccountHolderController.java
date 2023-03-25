@@ -1,8 +1,8 @@
 package com.enat.multiAccountAPI.flex.accountHolder;
 
- import com.enat.multiAccountAPI.local.creditAccounts.CreditsDto;
- import com.enat.multiAccountAPI.local.config.util.PaginatedResultsRetrievedEvent;
- import lombok.RequiredArgsConstructor;
+import com.enat.multiAccountAPI.local.config.util.PaginatedResultsRetrievedEvent;
+import com.enat.multiAccountAPI.local.creditAccounts.CreditsDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;

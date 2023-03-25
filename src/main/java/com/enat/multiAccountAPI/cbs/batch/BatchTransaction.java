@@ -3,7 +3,7 @@ package com.enat.multiAccountAPI.cbs.batch;
 import com.enat.multiAccountAPI.cbs.DrCr;
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 import java.math.BigDecimal;
 
 @Getter

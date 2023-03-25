@@ -1,7 +1,6 @@
 package com.enat.multiAccountAPI.cbs.batch;
 
 import com.enat.multiAccountAPI.cbs.DrCr;
-import com.enat.multiAccountAPI.local.creditAccounts.Transactions;
 import lombok.*;
 
 import javax.persistence.*;

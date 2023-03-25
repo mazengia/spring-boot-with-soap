@@ -1,7 +1,7 @@
 package com.enat.multiAccountAPI.local.config.Dto;
 
-import com.enat.multiAccountAPI.local.config.Dto.embedded.EmployeeDto;
 import com.enat.multiAccountAPI.local.config.Dto.embedded.Employee;
+import com.enat.multiAccountAPI.local.config.Dto.embedded.EmployeeDto;
 import org.mapstruct.Mapper;
 
 

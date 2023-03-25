@@ -1,16 +1,11 @@
 package com.enat.multiAccountAPI.cbs.batch;
 
-import com.enat.multiAccountAPI.local.config.exception.CBSException;
-import com.enat.multiAccountAPI.local.config.exception.Exceptionf;
 import com.enat.multiAccountAPI.wsdl.batch.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 import static com.enat.multiAccountAPI.cbs.CBSParameters.*;
 

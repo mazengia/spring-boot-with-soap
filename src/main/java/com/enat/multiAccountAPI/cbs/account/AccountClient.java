@@ -3,13 +3,10 @@ package com.enat.multiAccountAPI.cbs.account;
 import com.enat.multiAccountAPI.cbs.CBSParameters;
 import com.enat.multiAccountAPI.wsdl.account.*;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
 import static com.enat.multiAccountAPI.cbs.CBSParameters.ACCOUNT_OPERATION_NAME;
 import static com.enat.multiAccountAPI.cbs.CBSParameters.ACCOUNT_SOURCE_ID;
-
-import java.io.ByteArrayOutputStream;
 
 //@Log4j2
 @RequiredArgsConstructor
