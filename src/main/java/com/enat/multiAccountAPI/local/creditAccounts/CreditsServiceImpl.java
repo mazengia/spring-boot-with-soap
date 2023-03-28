@@ -23,18 +23,22 @@ public class CreditsServiceImpl implements CreditsService {
 
 
     @Override
-    public Credits createNewAccounts(Credits intervenes, JwtAuthenticationToken token
+    public Credits createNewAccounts(Credits credits, JwtAuthenticationToken token
     ) {
         var employeeId = Util.getEmployeeID(token);
         var maintainer = getEmployee(employeeId);
-        System.out.println(maintainer.getEmail());
-        intervenes.setMaintainer(maintainer);
-        return   creditsRepository.save(intervenes);
+        credits.setMaintainer(maintainer);
+        return   creditsRepository.save(credits);
     }
 
     @Override
     public Credits getNewAccountsById(long id) {
         return creditsRepository.findById(id).orElseThrow(()-> new EntityNotFoundException(Credits.class, "Intervene with that id " + id + " was not found!"));
+    }
+
+    @Override
+    public Page<Credits> getCreditByBatchId(long id, Pageable pageable) {
+        return creditsRepository.findAllByBatchCreateIdOrderByCreatedAtDesc(id,pageable);
     }
 
     @Override

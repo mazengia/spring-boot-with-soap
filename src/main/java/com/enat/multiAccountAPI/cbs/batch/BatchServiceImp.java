@@ -8,6 +8,8 @@ import com.enat.multiAccountAPI.local.creditAccounts.CreditsServiceImpl;
 import com.enat.multiAccountAPI.wsdl.batch.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
 
@@ -42,18 +44,16 @@ public class BatchServiceImp implements BatchService {
                 throw new CBSException("You don't have sufficient balance", new ArrayList<>());
             }
         }
-        if (creditTotal != debitTotal || !Objects.equals(batchCreate.getDebit(), batchCreate.getCredit()) || !Objects.equals(batchCreate.getDebitTotal(), batchCreate.getCreditTotal())) {
+        if (creditTotal != debitTotal) {
 
             throw new CBSException("Failed to create batch. debit amount should be equal to credit amount", new ArrayList<>());
         } else {
             var resp = batchClient.createBatch(batchCreate);
             checkCBSError(resp);
-
             if (resp.getFCUBSBODY()
                     .getFCUBSWARNINGRESP()
                     .get(0).getWARNING()
                     .get(0).getWDESC().equals("Successfully Saved and Authorized")) {
-                Credits credits = new Credits();
                 for (BatchTransaction batchTransaction : batchCreate.getTransactions()) {
                     if (Objects.equals(batchTransaction.getDrCr().getType(), "D")) {
                         batchCreates.setCostCenter(batchCreate.getCostCenter());
@@ -67,21 +67,21 @@ public class BatchServiceImp implements BatchService {
                         batchCreates.setLcyAmount(batchTransaction.getLcyAmount());
                         batchCreates.setBranchCode(batchTransaction.getBranchCode());
                         batchCreates.setTransactionCode(batchTransaction.getTransactionCode());
-                        batchCreates.setAccountOrGL(batchTransaction.getAccountOrGL());
-                        batchCreates.setRemark(batchTransaction.getRemark());
                         batchCreates.setDrCr(batchTransaction.getDrCr());
                         batchCreates2 = batchRepository.save(batchCreates);
                     }
                 }
                 if (batchCreates2.getId() != null){
                     for (BatchTransaction batchTransaction : batchCreate.getTransactions()) {
-                        if (!Objects.equals(batchTransaction.getDrCr().getType(), "D")) {
+                        Credits credits = new Credits();
+                        if (Objects.equals(batchTransaction.getDrCr().getType(), "C")) {
+                            System.out.println(batchTransaction.getDrCr().getType());
                             credits.setTransactions(batchTransaction);
                             credits.setBatchCreate(batchCreates2);
                             creditsService.createNewAccounts(credits, token);
                         }
                     }
-            }
+               }
             }
             return resp;
         }
@@ -100,6 +100,12 @@ public class BatchServiceImp implements BatchService {
         checkCBSError(res);
         return res;
     }
+
+    @Override
+    public Page<BatchCreate> getAllDebits(Pageable pageable) {
+        return batchRepository.findAll(pageable);
+    }
+
 
     private void checkCBSError(CREATEMJRNLBOOKFSFSRES rep) {
         if (!rep.getFCUBSBODY().getFCUBSERRORRESP().isEmpty()) {

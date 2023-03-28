@@ -42,9 +42,20 @@ public interface CreditsApi {
     @ResponseStatus(HttpStatus.OK)
     ResponseEntity<PagedModel<CreditsDto>> getIntervenes(@Parameter(description = "pagination object",
             schema = @Schema(implementation = Pageable.class))
-                                                               @Valid Pageable pageable,
+                                                         @Valid Pageable pageable,
                                                          PagedResourcesAssembler assembler,
                                                          JwtAuthenticationToken token,
                                                          UriComponentsBuilder uriBuilder,
                                                          final HttpServletResponse response);
+
+    @GetMapping("/credit/{batchId}")
+    @ResponseStatus(HttpStatus.OK)
+    ResponseEntity<PagedModel<CreditsDto>> getCreditByBatchId(@Parameter(description = "pagination object",
+            schema = @Schema(implementation = Pageable.class))
+                                                              @Valid Pageable pageable,
+                                                              @PathVariable("batchId") long batchId,
+                                                              PagedResourcesAssembler assembler,
+                                                              UriComponentsBuilder uriBuilder,
+                                                              final HttpServletResponse response);
+
 }

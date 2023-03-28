@@ -67,4 +67,13 @@ public class CreditsController implements CreditsApi {
                 , token
         ).map(creditsMapper::toInterveneDto)), HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<PagedModel<CreditsDto>> getCreditByBatchId(Pageable pageable, long batchId, PagedResourcesAssembler assembler,   UriComponentsBuilder uriBuilder, HttpServletResponse response) {
+        eventPublisher.publishEvent(new PaginatedResultsRetrievedEvent<>(
+                CreditsDto.class, uriBuilder, response, pageable.getPageNumber(),
+                creditsService.getCreditByBatchId(batchId,pageable).getTotalPages(), pageable.getPageSize()));
+        return new ResponseEntity<PagedModel<CreditsDto>>(
+                assembler.toModel(creditsService.getCreditByBatchId(batchId,pageable).map(creditsMapper::toInterveneDto)), HttpStatus.OK);
+    }
 }

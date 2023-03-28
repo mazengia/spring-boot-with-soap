@@ -12,6 +12,9 @@ public interface CreditsService {
             , JwtAuthenticationToken token
     );
     Credits getNewAccountsById(long id);
+
+    Page<Credits> getCreditByBatchId(long id, Pageable pageable);
+
     Credits updateNewAccounts(long id, Credits credits
             , JwtAuthenticationToken token
     ) throws IllegalAccessException;

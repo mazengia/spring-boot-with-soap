@@ -18,7 +18,5 @@ public class BatchTransaction {
     private String branchCode;
     private String accountNo;
     private String transactionCode;
-    private String accountOrGL;
-    private String remark;
     private DrCr drCr;
 }

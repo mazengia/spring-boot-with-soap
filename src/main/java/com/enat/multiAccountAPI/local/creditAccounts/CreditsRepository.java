@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @RepositoryRestResource
 public interface CreditsRepository extends JpaRepository<Credits, Long> {
     Page<Credits> findAllByDeletedIsFalseOrderByCreatedAtDesc(Pageable pageable);
+    Page<Credits> findAllByBatchCreateIdOrderByCreatedAtDesc( long batchId,Pageable pageable);
 }

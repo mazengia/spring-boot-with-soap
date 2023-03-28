@@ -71,7 +71,6 @@ public class BatchClient extends WebServiceGatewaySupport {
         detbsJrnlTxnDetail.setBRANCHCODE(transaction.getBranchCode());
         detbsJrnlTxnDetail.setAMOUNT(transaction.getLcyAmount());
         detbsJrnlTxnDetail.setCCY(LCY_CURRENCY);
-        detbsJrnlTxnDetail.setACORGL(transaction.getAccountOrGL());
         detbsJrnlTxnDetail.setTXNCODE(transaction.getTransactionCode());
         detbsJrnlTxnDetail.setLCYAMOUNT(transaction.getLcyAmount());
         return detbsJrnlTxnDetail;
