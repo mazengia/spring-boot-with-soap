@@ -1,9 +1,7 @@
 package com.enat.multiAccountAPI;
 
-import com.enat.multiAccountAPI.local.config.AuditorAwareImpl;
-import com.enat.multiAccountAPI.local.config.DerashConfiguration;
-import com.enat.multiAccountAPI.local.config.util.ApplicationProps;
-import com.enat.multiAccountAPI.local.config.util.EATSConfig;
+import com.enat.multiAccountAPI.config.AuditorAwareImpl;
+import com.enat.multiAccountAPI.config.util.ApplicationProps;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -13,7 +11,7 @@ import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@EnableConfigurationProperties({DerashConfiguration.class, EATSConfig.class, ApplicationProps.class})
+@EnableConfigurationProperties({ ApplicationProps.class})
 @SpringBootApplication
 @EnableFeignClients
 @EnableJpaAuditing(auditorAwareRef = "auditorProvider")

@@ -1,7 +1,7 @@
 package com.enat.multiAccountAPI.cbs.account;
 
-import com.enat.multiAccountAPI.local.config.exception.CBSError;
-import com.enat.multiAccountAPI.local.config.exception.CBSException;
+import com.enat.multiAccountAPI.config.exception.CBSError;
+import com.enat.multiAccountAPI.config.exception.CBSException;
 import com.enat.multiAccountAPI.wsdl.account.ERRORDETAILSType;
 import com.enat.multiAccountAPI.wsdl.account.ERRORType;
 import com.enat.multiAccountAPI.wsdl.account.QUERYCUSTACCIOFSRES;

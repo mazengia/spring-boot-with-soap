@@ -11,7 +11,6 @@
     <groupId>com.enat</groupId>
     <artifactId>arifPaySingleDebitMultipleCreditApi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!--    <packaging>war</packaging>-->
     <name>arifPaySingleDebitMultipleCreditApi</name>
     <description>arifPaySingleDebitMultipleCreditApi</description>
     <properties>
@@ -19,12 +18,8 @@
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <springdoc.version>1.6.15</springdoc.version>
         <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
-        <!--        <jasypt.version>3.0.4</jasypt.version>-->
-        <tradukisto.version>1.12.0</tradukisto.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
-        <spring-search.version>0.2.4</spring-search.version>
-        <pw-swift.version>SRU2022-9.3.7</pw-swift.version>
         <start-class>com.enat.multiAccountAPI.MultiAccountAPI</start-class>
     </properties>
     <dependencies>
@@ -45,11 +40,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -125,11 +115,6 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>${springdoc.version}</version>
@@ -154,26 +139,6 @@
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.ulisesbocchio</groupId>-->
-        <!--            <artifactId>jasypt-spring-boot-starter</artifactId>-->
-        <!--            <version>${jasypt.version}</version>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>pl.allegro.finance</groupId>
-            <artifactId>tradukisto</artifactId>
-            <version>${tradukisto.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.prowidesoftware</groupId>
-            <artifactId>pw-swift-core</artifactId>
-            <version>${pw-swift.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sipios</groupId>
-            <artifactId>spring-search</artifactId>
-            <version>${spring-search.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -185,23 +150,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <!-- tag::profile -->
-    <profiles>
-        <profile>
-            <id>java11</id>
-            <activation>
-                <jdk>[11,)</jdk>
-            </activation>
-
-            <dependencies>
-                <dependency>
-                    <groupId>org.glassfish.jaxb</groupId>
-                    <artifactId>jaxb-runtime</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
-    <!-- end::profile -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -287,11 +235,6 @@
                             <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
                             <schemas>
                                 <schema>
-                                    <!--                                    <url>-->
-                                    <!--                                        http://192.168.100.100:7003/FCUBSDEService/FCUBSDEService?WSDL-->
-                                    <!--                                    </url>-->
-                                </schema>
-                                <schema>
                                     <url>
                                         http://10.1.22.100:7003/FCUBSAccService/FCUBSAccService?WSDL
                                     </url>
@@ -313,25 +256,6 @@
                             <schemas>
                                 <schema>
                                     <url>http://10.1.22.100:7003/FCUBSDEService/FCUBSDEService?WSDL</url>
-                                </schema>
-                            </schemas>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>chequepoint</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <args>
-                                <arg>-XautoNameResolution</arg>
-                            </args>
-                            <schemaLanguage>WSDL</schemaLanguage>
-                            <generatePackage>com.enat.multiAccountAPI.wsdl.chequepoint</generatePackage>
-                            <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-                            <schemas>
-                                <schema>
-                                    <url>http://10.1.22.155/FinInterface/FinInterface.asmx?wsdl</url>
                                 </schema>
                             </schemas>
                         </configuration>

@@ -8,14 +8,10 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import static com.enat.multiAccountAPI.cbs.CBSParameters.ACCOUNT_OPERATION_NAME;
 import static com.enat.multiAccountAPI.cbs.CBSParameters.ACCOUNT_SOURCE_ID;
 
-//@Log4j2
 @RequiredArgsConstructor
 public class AccountClient extends WebServiceGatewaySupport {
-        private final String host;
+    private final String host;
     private final String makerUser;
-
-
-//    private String makerUser = "ADCUSER";
 
     public QUERYCUSTACCIOFSRES getAccountDetail(String account) {
         QUERYCUSTACCIOFSREQ request = new QUERYCUSTACCIOFSREQ();

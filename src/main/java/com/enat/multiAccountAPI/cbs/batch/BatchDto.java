@@ -1,14 +1,8 @@
 package com.enat.multiAccountAPI.cbs.batch;
 
 import com.enat.multiAccountAPI.cbs.DrCr;
-import com.enat.multiAccountAPI.local.config.Dto.embedded.Employee;
-import com.enat.multiAccountAPI.local.config.util.Auditable;
 import lombok.Data;
 
-import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.List;
 

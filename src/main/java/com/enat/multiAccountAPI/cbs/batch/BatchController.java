@@ -1,6 +1,6 @@
 package com.enat.multiAccountAPI.cbs.batch;
 
-import com.enat.multiAccountAPI.local.config.util.PaginatedResultsRetrievedEvent;
+import com.enat.multiAccountAPI.config.util.PaginatedResultsRetrievedEvent;
 import com.enat.multiAccountAPI.wsdl.batch.CREATEMJRNLBOOKFSFSRES;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;

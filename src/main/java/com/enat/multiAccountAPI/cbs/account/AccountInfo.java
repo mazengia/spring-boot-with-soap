@@ -1,6 +1,6 @@
 package com.enat.multiAccountAPI.cbs.account;
 
-import com.enat.multiAccountAPI.local.config.validation.AccountNumber;
+import com.enat.multiAccountAPI.cbs.config.validation.AccountNumber;
 import lombok.Data;
 
 @Data

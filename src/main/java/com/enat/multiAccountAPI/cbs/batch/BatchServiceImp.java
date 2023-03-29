@@ -1,10 +1,10 @@
 package com.enat.multiAccountAPI.cbs.batch;
 
 import com.enat.multiAccountAPI.cbs.account.CBSAccountServiceImp;
-import com.enat.multiAccountAPI.local.config.exception.CBSError;
-import com.enat.multiAccountAPI.local.config.exception.CBSException;
-import com.enat.multiAccountAPI.local.creditAccounts.Credits;
-import com.enat.multiAccountAPI.local.creditAccounts.CreditsServiceImpl;
+import com.enat.multiAccountAPI.config.exception.CBSError;
+import com.enat.multiAccountAPI.config.exception.CBSException;
+import com.enat.multiAccountAPI.creditAccounts.Credits;
+import com.enat.multiAccountAPI.creditAccounts.CreditsServiceImpl;
 import com.enat.multiAccountAPI.wsdl.batch.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
